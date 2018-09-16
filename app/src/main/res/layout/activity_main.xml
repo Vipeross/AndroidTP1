@@ -9,14 +9,26 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <com.polytech.androidtp1.AppBar
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:backTitle="Retour"
+            app:pageTitle="Page Title"
+            app:backColor="#1f2633"
+            android:id="@+id/appBar">
+
+        </com.polytech.androidtp1.AppBar>
+
         <ImageView
+            android:layout_marginTop="50dp"
             android:id="@+id/imageView"
             android:layout_width="match_parent"
-            android:layout_height="194dp"
+            android:layout_height="200dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            app:srcCompat="@drawable/spiderman" />
+            android:src="@drawable/spiderman"
+            android:scaleType="fitXY"/>
 
         <LinearLayout
             android:background="#161c24"
@@ -140,19 +152,16 @@
                 />
         </LinearLayout>
 
-        <!--
+
         <LinearLayout
             android:id="@+id/comments"
             android:layout_below="@id/buttons"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:background="#c3c3c3">
-
-
-
         </LinearLayout>
 
-        -->
+
         <LinearLayout
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"
