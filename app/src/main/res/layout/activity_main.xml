@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <ScrollView
+    <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:fillViewport="true">
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    android:fillViewport="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
 
         <com.polytech.androidtp1.AppBar
             android:layout_width="match_parent"
@@ -16,184 +16,192 @@
             app:pageTitle="Page Title"
             app:backColor="#1f2633"
             android:id="@+id/appBar">
-
         </com.polytech.androidtp1.AppBar>
-
-        <ImageView
-            android:layout_marginTop="50dp"
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:src="@drawable/spiderman"
-            android:scaleType="fitXY"/>
-
-        <LinearLayout
-            android:background="#161c24"
-            android:layout_width="match_parent"
+        <ScrollView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:id="@+id/infos"
-            android:paddingLeft="10dp"
-            android:layout_below="@id/imageView">
-            <TextView
-                android:textColor="@color/yellow"
+            android:layout_below="@id/appBar">
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="A PROPOS DU FILM"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="10dp"
-                />
-            <LinearLayout
-                android:layout_marginBottom="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="3"
-                android:orientation="horizontal">
-                <TextView
-                    android:textColor="@color/white"
-                    android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:src="@drawable/spiderman"
+                    android:scaleType="fitXY"/>
+
+                <LinearLayout
+                    android:background="#161c24"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Titre"/>
-                <TextView
-                    android:textColor="@color/white"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:text="Spider-Man Homecoming"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_marginBottom="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="3"
-                android:orientation="horizontal">
-                <TextView
-                    android:textColor="@color/white"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Titre d'origine"/>
-                <TextView
-                    android:textColor="@color/white"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:text="Spider-Man"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_marginBottom="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="3"
-                android:orientation="horizontal">
-                <TextView
-                    android:textColor="@color/white"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Description"/>
-                <TextView
-                    android:textColor="@color/white"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:text="@string/desciption"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_marginBottom="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="3"
-                android:orientation="horizontal">
-                <TextView
-                    android:textColor="@color/white"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Mots clés"/>
-                <TextView
-                    android:textColor="@color/white"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:text="Marvel, Super-héros ..."/>
-            </LinearLayout>
-        </LinearLayout>
-        <LinearLayout
-            android:background="#1f2633"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:orientation="horizontal"
-            android:weightSum="7"
-            android:gravity="center"
-            android:id="@+id/buttons"
-            android:layout_below="@id/infos">
-            <Button
-                style="@style/button"
-                android:drawableLeft="@drawable/share"
-                android:id="@+id/btnShare"
-                android:text="Partager"
-                />
-            <Button
-                style="@style/button"
-                android:drawableLeft="@drawable/comment"
-                android:id="@+id/btnComment"
-                android:text="Commenter"
-                />
-            <Button
-                style="@style/button"
-                android:drawableLeft="@drawable/like"
-                android:id="@+id/btnLike"
-                android:text="Aimer"
-                />
-        </LinearLayout>
+                    android:orientation="vertical"
+                    android:id="@+id/infos"
+                    android:paddingLeft="10dp"
+                    android:layout_below="@id/imageView">
+                    <TextView
+                        android:textColor="@color/yellow"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="A PROPOS DU FILM"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="10dp"
+                        />
+                    <LinearLayout
+                        android:layout_marginBottom="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="3"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:textColor="@color/white"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Titre"/>
+                        <TextView
+                            android:textColor="@color/white"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="Spider-Man Homecoming"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginBottom="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="3"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:textColor="@color/white"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Titre d'origine"/>
+                        <TextView
+                            android:textColor="@color/white"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="Spider-Man"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginBottom="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="3"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:textColor="@color/white"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Description"/>
+                        <TextView
+                            android:textColor="@color/white"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="@string/desciption"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginBottom="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="3"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:textColor="@color/white"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Mots clés"/>
+                        <TextView
+                            android:textColor="@color/white"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="Marvel, Super-héros ..."/>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:background="#1f2633"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:orientation="horizontal"
+                    android:weightSum="7"
+                    android:gravity="center"
+                    android:id="@+id/buttons"
+                    android:layout_below="@id/infos">
+                    <Button
+                        style="@style/button"
+                        android:drawableLeft="@drawable/share"
+                        android:id="@+id/btnShare"
+                        android:text="Partager"
+                        />
+                    <Button
+                        style="@style/button"
+                        android:drawableLeft="@drawable/comment"
+                        android:id="@+id/btnComment"
+                        android:text="Commenter"
+                        />
+                    <Button
+                        style="@style/button"
+                        android:drawableLeft="@drawable/like"
+                        android:id="@+id/btnLike"
+                        android:text="Aimer"
+                        />
+                </LinearLayout>
 
 
-        <LinearLayout
-            android:id="@+id/comments"
-            android:layout_below="@id/buttons"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:background="#c3c3c3">
-        </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/comments"
+                    android:layout_below="@id/buttons"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="#c3c3c3">
+                </LinearLayout>
 
 
-        <LinearLayout
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
+
+
+
+
+
+
+            </RelativeLayout>
+        </ScrollView>
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="5"
+        android:background="#1f2633"
+        android:layout_alignParentBottom="true"
+        >
+        <EditText
+            android:id="@+id/sendText"
+            android:layout_marginLeft="10dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:weightSum="5"
-            android:background="#1f2633"
-            android:layout_alignParentBottom="true"
-            >
-            <EditText
-                android:id="@+id/sendText"
-                android:layout_marginLeft="10dp"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:textColor="@color/white"
-                android:textColorHint="#acafb3"
-                android:hint="Say something ..."
-                android:backgroundTint="#acafb3"/>
-            <ImageButton
-                android:id="@+id/btnSend"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@drawable/send"
-                android:background="@null"
-                android:layout_gravity="center_vertical"
-                />
-        </LinearLayout>
-
-
-
-
-
+            android:layout_weight="4"
+            android:textColor="@color/white"
+            android:textColorHint="#acafb3"
+            android:hint="Say something ..."
+            android:backgroundTint="#acafb3"/>
+        <ImageButton
+            android:id="@+id/btnSend"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/send"
+            android:background="@null"
+            android:layout_gravity="center_vertical"
+            />
+    </LinearLayout>
     </RelativeLayout>
-    </ScrollView>

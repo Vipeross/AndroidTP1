@@ -1,8 +1,10 @@
 package com.polytech.androidtp1;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -35,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnSend.setOnClickListener(this);
         btnComment.setOnClickListener(this);
 
-        btnComment.setFocusableInTouchMode(true);
+        sendText.setFocusableInTouchMode(true);
 
     }
 
@@ -51,7 +53,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         else if(v.equals(btnComment))
         {
-            btnComment.requestFocus();
+            sendText.requestFocus();
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.showSoftInput(sendText,InputMethodManager.SHOW_IMPLICIT);
+
         }
         else if(v.equals(btnClose))
         {
